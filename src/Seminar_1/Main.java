@@ -1,4 +1,6 @@
-package HW1_Unit_Tests;
+package Seminar_1;
+
+import org.junit.platform.engine.support.hierarchical.ThrowableCollector;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -7,7 +9,8 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 
-import static org.assertj.core.api.Assertions.*; // Импортируем классы библиотеки assertJ
+import static org.junit.Assert.*;
+// import static org.assertj.core.api.Assertions.*; // Импортируем классы библиотеки assertJ
 
 public class Main {
     public static void main(String[] args) {

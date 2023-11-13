@@ -1,4 +1,4 @@
-package HW1_Unit_Tests.Shop;
+package Seminar_1.Shop;
 
 public class Product {
     private Integer cost; // Стоимость продукта

@@ -1,6 +1,7 @@
 package HW1_Unit_Tests.Calculator;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.hamcrest.core.IsEqual.equalTo;
+import static org.junit.Assert.*;
 
 public class CalculatorTest {
     public static void main(String[] args) {
@@ -71,5 +72,49 @@ public class CalculatorTest {
         // }
         //   assert 0 == HW1_Unit_Tests.Calculator.Calculator.calculation(2, 6, '+');
         //    assertThat(HW1_Unit_Tests.Calculator.Calculator.calculation(2, 6, '+')).isEqualTo(0);
+    }
+
+
+    // ДОМАШНЯЯ РАБОТА:
+    //Задание 1. ** В классе Calculator создайте метод calculateDiscount, который принимает сумму
+    // покупки и процент скидки и возвращает сумму с учетом скидки. Ваша задача - проверить этот метод
+    // с использованием библиотеки AssertJ. Если метод calculateDiscount получает недопустимые аргументы,
+    // он должен выбрасывать исключение ArithmeticException. Не забудьте написать тесты для проверки этого
+    // поведения.
+
+    @org.junit.jupiter.api.BeforeEach
+    void setUp() {
+    }
+
+    @org.junit.jupiter.api.AfterEach
+    void tearDown() {
+    }
+
+    //тест1. Проверяем правильность расчета суммы со скидкой
+    @org.junit.jupiter.api.Test
+    public void test1CalculatingDiscount() {
+        Calculator calculator = new Calculator();
+
+        double res1 = Calculator.calculatingDiscount(100, 10);
+        assertThat(res1, equalTo(90.0));
+    }
+
+    //тест2. Если сумма покупок = 0, результатом будет 0.
+    @org.junit.jupiter.api.Test
+    public void test2CalculatingDiscount() {
+        Calculator calculator = new Calculator();
+
+        double res1 = Calculator.calculatingDiscount(00.0, 10);
+        assertThat(res1, equalTo(0.0));
+    }
+
+    //тест3. Проверка выброса ошибки при недопустимых аргументах путем сравнения с ожидаемой
+    @org.junit.jupiter.api.Test
+    public void test3CalculatingDiscount() {
+        Calculator calculator = new Calculator();
+        String message = "invalid arguments";
+        Exception exception = assertThrows(ArithmeticException.class, () ->
+                Calculator.calculatingDiscount(-100, 2));
+        assertEquals(message, exception.getMessage());
     }
 }
