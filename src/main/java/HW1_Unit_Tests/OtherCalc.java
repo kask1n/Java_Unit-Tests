@@ -1,6 +1,6 @@
-package HW1_Unit_Tests.Calculator;
+package HW1_Unit_Tests;
 
-public class Calculator {
+public class OtherCalc {
     public static int calculation(int firstOperand, int secondOperand, char operator) {
         int result;
 
@@ -49,6 +49,6 @@ public class Calculator {
             throw new ArithmeticException("invalid arguments");
         }
 
-        return purchaseAmount - ((double) purchaseAmount * discountAmount / 100); // Метод должен возвращать сумму покупки со скидкой
+        return purchaseAmount - purchaseAmount * discountAmount / 100; // Метод должен возвращать сумму покупки со скидкой
     }
 }

@@ -1,6 +1,4 @@
-package Seminar_1;
-
-import org.junit.platform.engine.support.hierarchical.ThrowableCollector;
+package Seminar_1.Examples;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -9,42 +7,40 @@ import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 
-import static org.junit.Assert.*;
-// import static org.assertj.core.api.Assertions.*; // Импортируем классы библиотеки assertJ
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class Main {
     public static void main(String[] args) {
         // Проверьте, как работают методы:
 
-        // assertConditionA();
+        assertConditionA();
 
-        // assertConditionB();
+        assertConditionB();
 
-        // System.out.println(sum(2_147_483_647, 1));
+        System.out.println(sum(2_147_483_647, 1));
 
-        // happyNY();
+        happyNY();
 
-        // expectedValue();
+        expectedValue();
 
-        // checkingShoppingCart()
+        checkingShoppingCart();
 
-        /*
-                assertThat(colors)
-                        .isNotEmpty()             // Массив не должен быть пустым
-                        .hasSize(7)               // Размер массива должен быть равен 7
-                        .doesNotHaveDuplicates()  // Массив не должен содержать повторяющихся элементов
-                        .contains("orange", "green", "violet") // Массив должен содержать цвета: "orange", "green", "violet"
-                        .endsWith("gold")        //  Последним цветом в массиве должен быть "gold"
-                        .startsWith("aqua")     // Первым цветом в массиве должен быть "aqua"
-                        .containsSequence("yellow", "blue") // В массиве должна быть последовательность цветов "yellow", "blue"
-                        .doesNotContain("red", "black");    //Массив не должен содержать цвета: "red", "black"
-        */
+        String[] colors = {"aqua", "orange", "green", "violet", "yellow", "blue", "gold"};
 
-        //  String[] colors = {};
+        assertThat(colors)
+                .isNotEmpty()             // Массив не должен быть пустым
+                .hasSize(7)               // Размер массива должен быть равен 7
+                .doesNotHaveDuplicates()  // Массив не должен содержать повторяющихся элементов
+                .contains("orange", "green", "violet") // Массив должен содержать цвета: "orange", "green", "violet"
+                .endsWith("gold")        //  Последним цветом в массиве должен быть "gold"
+                .startsWith("aqua")     // Первым цветом в массиве должен быть "aqua"
+                .containsSequence("yellow", "blue") // В массиве должна быть последовательность цветов "yellow", "blue"
+                .doesNotContain("red", "black");    //Массив не должен содержать цвета: "red", "black"
 
-        //  testingJavaCollectionsAssertJ(colors);
 
-        //  checkingHero();
+        testingJavaCollectionsAssertJ(colors);
+
+        checkingHero();
     }
 
     //                  Практические задания:
@@ -97,20 +93,19 @@ public class Main {
         products.add("water");
 
         for (String product : products) {
-            if (product.equals("apple")) {
-                System.out.println("category: " + productCategories.get(0));
-            } else if (product.equals("tomato")) {
-                System.out.println("category: " + productCategories.get(1));
-            } else if (product.equals("bread")) {
-                System.out.println("category: " + productCategories.get(2));
-            } else {
-                assert false : "Unknown category for the product " + product;
+            switch (product) {
+                case "apple" -> System.out.println("category: " + productCategories.get(0));
+                case "tomato" -> System.out.println("category: " + productCategories.get(1));
+                case "bread" -> System.out.println("category: " + productCategories.get(2));
+                default -> {
+                    assert false : "Unknown category for the product " + product;
+                }
             }
         }
     }
 
     // 1.6
-    //   AssertJ
+    // AssertJ
     // ok - assertThat(actual/фактическое).isEqualTo(expected/ожидаемое);
     // not ok - assertThat(expected/ожидаемое).isEqualTo(actual/фактическое);
     public static void expectedValue() {
@@ -144,7 +139,7 @@ public class Main {
         5. Проверить, что герой человек (свойство true)
         */
 
-        // assert "Emmett".equals(emmett.getName()): "Name should be Emmett";
+        assert "Emmett".equals(emmett.getName()) : "Name should be Emmett";
         // Далее продолжите сами ...
 
     }
