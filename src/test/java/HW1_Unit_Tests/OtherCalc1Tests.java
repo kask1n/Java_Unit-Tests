@@ -72,11 +72,11 @@ public class OtherCalc1Tests {
 
         // HW1.3: Сравните одну и ту же проверку с использованием условий, утверждений, AssertJ
         // в каком случае стандартное сообщение об ошибке будет более информативным?
-        if (0 != OtherCalc.calculation(2, 6, '+')) {
+        if (8 != OtherCalc.calculation(2, 6, '+')) {
             throw new AssertionError("Ошибка в методе");
         }
-        assert 0 == OtherCalc.calculation(2, 6, '+');
-        assertThat(OtherCalc.calculation(2, 6, '+')).isEqualTo(0);
+        assert 8 == OtherCalc.calculation(2, 6, '+');
+        assertThat(OtherCalc.calculation(2, 6, '+')).isEqualTo(8);
     }
 
 

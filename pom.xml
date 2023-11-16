@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>Java_Unit_Tests</artifactId>
+    <artifactId>Java_Unit-Tests</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <!-- Создайте новый проект Maven:-->
